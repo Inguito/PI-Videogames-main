@@ -57,21 +57,6 @@ export function filterByCreated(payload) {
   }
 }
 
-// export function filterByActivity(payload) {
-//   return {
-//     type: 'FILTER_BY_ACTIVITY',
-//     payload,
-//   }
-// }
-
-
-// export function filterByActivityName(payload) {
-//   return {
-//     type: 'FILTER_BY_ACTIVITY_NAME',
-//     payload,
-//   }
-// }
-
 // Filtro por género de Videogame accediendo con el nombre
 
 export function filterByGenreName(payload) {
@@ -89,16 +74,7 @@ export function sort(payload) {
   }
 }
 
-// export function createActivity(details) {
-//   return async function (dispatch) {
-//     const newActivity = await axios.post(
-//       'http://localhost:3001/activity',
-//       details
-//     )
-//     console.log(newActivity)
-//     return newActivity
-//   }
-// }
+// Creamos un nuevo videogame en el BackEnd
 export function createVideogame(details) {
   return async function (dispatch) {
     const newVideogame = await axios.post(

@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-//import { background, homeBtn, home_span } from "../styles/LandingPage.module.css";
 import { background, homeBtn, home_span,title1 } from "./LandingPage.module.css";
 function LandingPage() {
   return (

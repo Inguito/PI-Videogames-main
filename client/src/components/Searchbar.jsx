@@ -17,7 +17,6 @@ export default function Searchbar({setCurrentPage}) {
     e.preventDefault()
     dispatch(getVideogameByName(value))
     setCurrentPage(1);
-  //  setCountriesPerPage(15);
     setValue('');
   }
 

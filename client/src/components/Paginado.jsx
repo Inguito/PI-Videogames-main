@@ -2,10 +2,6 @@ import React from "react";
 import styles from './Paginado.module.css'
 
 
-//export default function Paginado({ countries, countriesPerPage1, countriesPerPage2, paginado }){
-//export default function Paginado({ totalAmount, countriesPerPage1, countriesPerPage2, paginado }){
-//export default function Paginado({ totalAmount, videogamesPerPage1, paginado }){
-
 export default function Paginado({ amountPerPage, totalAmount, pageNumber }) {
         const pageNumbers = []
       
@@ -27,7 +23,6 @@ export default function Paginado({ amountPerPage, totalAmount, pageNumber }) {
                     >
                       {num}
                     </a>
-
                   //   <button  
                   //   key={num}
                   //   className={styles.number}

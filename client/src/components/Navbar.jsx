@@ -18,12 +18,7 @@ const genres = useSelector((state) => state.genres);
   useEffect(() => {
     dispatch(getAllVideogames());
     dispatch(getAllGenres());
-//     dispatch(getAllActivities());
   }, [dispatch])
-
-    // useEffect(() => {
-    //   dispatch(getAllVideogames());
-    // }, [dispatch])
 
   return (
     <div className={styles.navbar}>
@@ -34,7 +29,6 @@ const genres = useSelector((state) => state.genres);
 
         <Searchbar 
           setCurrentPage={setCurrentPage}
-//          setCountriesPerPage={setCountriesPerPage}
             />
         <div className={styles.filterContainer}>
           {/* filtro por distinción de Creación */}
@@ -43,15 +37,6 @@ const genres = useSelector((state) => state.genres);
             <option value='Api'>Api</option>
             <option value='Database'>Database</option>
           </select>
-
-          {/* filtro por estacion */}
-          {/* <select className={styles.filter} onChange={(e) => actFilter(e)}>
-            <option value='All'>Filter genres by season...</option>
-            <option value='Summer'>Summer</option>
-            <option value='Fall'>Fall</option>
-            <option value='Winter'>Winter</option>
-            <option value='Spring'>Spring</option>
-          </select> */}
 
           {/* filtro por nombre de género */}
           <select className={styles.filter} onChange={(e) => genreNameFilter(e)}>
@@ -64,13 +49,6 @@ const genres = useSelector((state) => state.genres);
             ))}
           </select>
           
-          {/* <select className={styles.filter} onChange={(e) => genreNameFilter(e)}>
-            <option value='All'>Filter by activity...</option>
-            <option value='Skiing'>Skiing</option>
-            <option value='Surfing'>Surfing</option>
-          </select> */}
-
-
           {/* orden por nombre o poblacion */}
           <select className={styles.filter} onChange={(e) => sort(e)}>
             <option value='AZ'>Sort by...</option>

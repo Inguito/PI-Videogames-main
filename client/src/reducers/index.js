@@ -1,14 +1,14 @@
 const initialState = {
-  countries: [], //este array se va a ir modificando según los filtros que aplique en el front
+//  countries: [], //este array se va a ir modificando según los filtros que aplique en el front
   videogames: [], //este array se va a ir modificando según los filtros que aplique en el front
-  allCountries: [], //en este array voy a tener siempre TODOS los paises
+//  allCountries: [], //en este array voy a tener siempre TODOS los paises
   allVideogames: [], //en este array voy a tener siempre TODOS los videogames
 //  countryDetail: {}, // en este array voy a alojar el detail de cada country clickleado
   videogameDetail: {}, // en este array voy a alojar el detail de cada videogame clickleado
-  activities: [], // array de la BD de Activity
+//  activities: [], // array de la BD de Activity
   genres: [], // array de la BD de Genre
   platforms: [], // array de la BD de Platform
-  countriesBackup:[], //array conjuncion de filtros 
+//  countriesBackup:[], //array conjuncion de filtros 
   videogamesBackup:[], //array conjuncion de filtros 
 }
 //function reducer(state = initialState, { type, payload })
@@ -17,9 +17,6 @@ function rootReducer(state = initialState, action) {
     case 'GET_VIDEOGAMES':
       return {
         ...state,
-        // countries: action.payload,
-        // allCountries: action.payload,
-        // countriesBackup: action.payload,
         videogames: action.payload,
         allVideogames: action.payload,
         videogamesBackup: action.payload,
@@ -27,21 +24,8 @@ function rootReducer(state = initialState, action) {
     case 'GET_VIDEOGAME_BY_NAME':
       return {
         ...state,
-//        countries: action.payload,
         videogames: action.payload,
       }
-    // case 'FILTER_BY_CONTINENT':
-    //     const countries = state.allCountries;
-    //     const continentFilter =
-    //       action.payload === "All Continent"
-    //         ? countries
-    //         : countries.filter((el) => el.continent === action.payload);
-  
-    //     return {
-    //       ...state,
-    //       countries: continentFilter,
-    //       countriesBackup: continentFilter,
-    //     };
 
     case 'FILTER_BY_CREATED':
     let filtered = [];
@@ -63,22 +47,6 @@ function rootReducer(state = initialState, action) {
                };
 
 
-    // case 'FILTER_BY_ACTIVITY_NAME':
-    //     const allCountriesActiv = state.countriesBackup;
-    //     const activFilter =
-    //       action.payload === "All Activities"
-    //         ? allCountriesActiv.filter((all) => all.activities.length > 0)
-    //         : allCountriesActiv.filter(
-    //             (el) =>
-    //               el.activities &&
-    //               el.activities.map((fil) => fil.name).includes(action.payload)
-    //           );
-  
-    //     return {
-    //       ...state,
-    //       allCountries: activFilter,
-    //       countries: activFilter,
-    //     };
     case 'FILTER_BY_GENRE_NAME':
         const allVideogamesGenre = state.videogamesBackup;
         const genreFilter =
@@ -130,12 +98,6 @@ function rootReducer(state = initialState, action) {
         ...state,
         videogameDetail: action.payload,
       }
-    //  "GET_ACTIVITIES"
-    // case "GET_ACTIVITIES": //ok
-    //   return {
-    //     ...state,
-    //     activities: action.payload,
-    //   };
 
     case "GET_GENRES": //ok
     return {
@@ -148,8 +110,6 @@ function rootReducer(state = initialState, action) {
       ...state,
       platforms: action.payload,
     };
-
-    
 
     
     default:

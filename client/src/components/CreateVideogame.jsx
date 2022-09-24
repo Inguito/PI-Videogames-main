@@ -48,10 +48,6 @@ export default function CreateVideogame() {
     })
   }
 
-
-
-
-
   function handleSubmit(e) {
     e.preventDefault()
     dispatch(createVideogame(details))
